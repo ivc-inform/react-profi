@@ -1,0 +1,15 @@
+# @format
+
+{
+    "arrowParens": "avoid",
+    "bracketSameLine": true,
+    "bracketSpacing": true,
+    "insertPragma": true,
+    "jsxSingleQuote": false,
+    "printWidth": 150,
+    "requirePragma": true,
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 4,
+    "trailingComma": "none"
+}
