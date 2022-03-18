@@ -3,6 +3,7 @@
 import * as React from "react";
 import { Login } from "../pages/Login";
 import { Events } from "../pages/Events";
+import { Navigate } from "react-router-dom";
 
 export interface IRoute {
     path: string;
@@ -15,15 +16,9 @@ export enum RouteName {
 }
 
 export const publicRoutes: IRoute[] = [
-    {
-        path: RouteName.LOGIN,
-        component: <Login />
-    }
+    { path: RouteName.LOGIN, component: <Login /> },
 ];
 
 export const privateRoutes: IRoute[] = [
-    {
-        path: RouteName.EVENT,
-        component: <Events />
-    }
+    { path: RouteName.EVENT, component: <Events /> },
 ];
