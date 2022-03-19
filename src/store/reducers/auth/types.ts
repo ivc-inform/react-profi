@@ -25,7 +25,7 @@ interface SetErrorAction {
 }
 
 interface SetUserAction {
-    type: AuthActionsEnum.SET_AUTH;
+    type: AuthActionsEnum.SET_USER;
     payload: IUser
 }
 
