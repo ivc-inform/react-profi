@@ -11,13 +11,13 @@ const initialState: AuthState = {
 export default function authReducer (state = initialState, action: AuthAction): AuthState {
     switch ( action.type ) {
         case AuthActionsEnum.SET_AUTH:
-            return { ...state, isAuth: action.payload }
+            return { ...state, isAuth: action.payload, isLoading: false }
         case AuthActionsEnum.SET_ERROR:
-            return {}
+            return { ...state, error: action.payload, isLoading: false }
         case AuthActionsEnum.SET_USER:
-            return {}
+            return { ...state, user: action.payload }
         case AuthActionsEnum.SET_IS_LOADING:
-            return {}
+            return { ...state, isLoading: action.payload }
         default:
             return state
     }
