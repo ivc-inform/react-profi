@@ -6,8 +6,14 @@ export interface LoginFormProps {
 }
 
 export const LoginForm: FC<LoginFormProps> = props => {
+    const submit = () => {
+        console.log("submit")
+    }
+
     return (
-        <Form>
+        <Form
+            onFinish={submit}
+        >
             <Form.Item
                 label="Имя пользователя"
                 name="username"
