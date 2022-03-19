@@ -7,7 +7,7 @@ import { Navigate } from "react-router-dom";
 
 export interface IRoute {
     path: string;
-    component: React.ReactNode;
+    element: React.ReactNode;
 }
 
 export enum RouteName {
@@ -16,9 +16,9 @@ export enum RouteName {
 }
 
 export const publicRoutes: IRoute[] = [
-    { path: RouteName.LOGIN, component: <Login /> },
+    { path: RouteName.LOGIN, element: <Login /> },
 ];
 
 export const privateRoutes: IRoute[] = [
-    { path: RouteName.EVENT, component: <Events /> },
+    { path: RouteName.EVENT, element: <Events /> },
 ];
