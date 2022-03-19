@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Button, Form, Input } from "antd";
+import { rules } from "../utils/rules";
 
 export interface LoginFormProps {
 }
@@ -10,14 +11,14 @@ export const LoginForm: FC<LoginFormProps> = props => {
             <Form.Item
                 label="Имя пользователя"
                 name="username"
-                rules={[{ required: true, message: 'Пожалуйста введите имя пользователя!' }]}
+                rules={ [rules.required('Пожалуйста введите имя пользователя!')] }
             >
                 <Input />
             </Form.Item>
             <Form.Item
                 label="Пароль"
                 name="password"
-                rules={[{ required: true, message: 'Пожалуйста введите пароль!' }]}
+                rules={ [rules.required('Пожалуйста введите пароль!')] }
             >
                 <Input />
             </Form.Item>
