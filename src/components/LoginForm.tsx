@@ -1,18 +1,22 @@
 import React, { FC } from "react";
 import { Button, Form, Input } from "antd";
 import { rules } from "../utils/rules";
+import { useDispatch } from "react-redux";
+import { AuthActionCreators } from "../store/reducers/auth/action-creators";
 
 export interface LoginFormProps {
 }
 
 export const LoginForm: FC<LoginFormProps> = props => {
+    const dispatch = useDispatch()
+
     const submit = () => {
-        console.log("submit")
+        dispatch(AuthActionCreators.login("", ""))
     }
 
     return (
         <Form
-            onFinish={submit}
+            onFinish={ submit }
         >
             <Form.Item
                 label="Имя пользователя"
