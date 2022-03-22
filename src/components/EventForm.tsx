@@ -11,17 +11,18 @@ import { useTypedSelector } from "../hooks/useTypedSelector";
 
 export interface EventFormProps {
     guests: IUser[]
+    submit (event: IEvent): void
 }
 
 export const EventForm: FC<EventFormProps> = props => {
     const [event, setEvent] = useState<IEvent>({ author: "", date: "", description: "", guest: "" } as IEvent);
     const { username } = useTypedSelector(state => state.auth.user)
     const selectDate = (date: Moment | null) => {
-        setEvent({ ...event, date: formatDate(date?.toDate()), author: username })
+        setEvent({ ...event, date: formatDate(date?.toDate()) })
     }
 
     const submitForm = () => {
-        console.log(event)
+        props.submit({ ...event, author: username })
     }
 
     return (
