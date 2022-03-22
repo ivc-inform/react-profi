@@ -30,7 +30,7 @@ export const EventForm: FC<EventFormProps> = props => {
             <Form.Item label="Описание события" name="description" rules={ [rules.required()] }>
                 <Input value={ event.description } onChange={ e => setEvent({ ...event, description: e.target.value }) } />
             </Form.Item>
-            <Form.Item label="Дата события" name="date" rules={ [rules.required()] }>
+            <Form.Item label="Дата события" name="date" rules={ [rules.required(), rules.isDateActual("Нельзя создать событие в прошлом")] }>
                 <DatePicker onChange={ date => selectDate(date) } />
             </Form.Item>
             <Form.Item label="Выберите гостя" name="quest" rules={ [rules.required()] }>
