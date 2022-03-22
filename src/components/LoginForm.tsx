@@ -37,7 +37,7 @@ export const LoginForm: FC<LoginFormProps> = props => {
                 name="password"
                 rules={ [rules.required('Пожалуйста введите пароль!')] }
             >
-                <Input value={ password } onChange={ (e) => setPassword(e.target.value) }/>
+                <Input value={ password } onChange={ (e) => setPassword(e.target.value) } type="password" />
             </Form.Item>
             <Form.Item>
                 <Button type="primary" htmlType="submit" loading={ isLoading }>

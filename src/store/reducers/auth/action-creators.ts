@@ -30,11 +30,9 @@ export const AuthActionCreators = {
         }
     },
     logout: () => async (dispatch: AppDispatch) => {
-        try {
-
-        } catch ( e ) {
-            const _e = e as Error
-            dispatch(AuthActionCreators.setError(_e.message))
-        }
+        localStorage.removeItem("auth")
+        localStorage.removeItem("username")
+        dispatch(AuthActionCreators.setIsAuth(false))
+        dispatch(AuthActionCreators.setUser({} as IUser))
     },
 }
