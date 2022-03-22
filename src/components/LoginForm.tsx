@@ -11,7 +11,7 @@ export const LoginForm: FC<LoginFormProps> = props => {
     const dispatch = useDispatch()
 
     const submit = () => {
-        dispatch(AuthActionCreators.login("", ""))
+        dispatch(AuthActionCreators.login("user", "123"))
     }
 
     return (
