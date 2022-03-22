@@ -1,10 +1,12 @@
+/** @format */
+
 import { IUser } from "../../../models/IUser";
 
 export interface AuthState {
-    isAuth: boolean
-    user: IUser
-    isLoading: boolean
-    error: string
+    isAuth: boolean;
+    user: IUser;
+    isLoading: boolean;
+    error: string;
 }
 
 export enum AuthActionsEnum {
@@ -16,22 +18,22 @@ export enum AuthActionsEnum {
 
 export interface SetAuthAction {
     type: AuthActionsEnum.SET_AUTH;
-    payload: boolean
+    payload: boolean;
 }
 
 export interface SetErrorAction {
     type: AuthActionsEnum.SET_ERROR;
-    payload: string
+    payload: string;
 }
 
 export interface SetUserAction {
     type: AuthActionsEnum.SET_USER;
-    payload: IUser
+    payload: IUser;
 }
 
 export interface SetIsLoadingAction {
     type: AuthActionsEnum.SET_IS_LOADING;
-    payload: boolean
+    payload: boolean;
 }
 
-export type AuthAction = SetAuthAction | SetErrorAction | SetUserAction | SetIsLoadingAction
+export type AuthAction = SetAuthAction | SetErrorAction | SetUserAction | SetIsLoadingAction;

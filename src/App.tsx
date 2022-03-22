@@ -8,12 +8,12 @@ import { Layout } from "antd";
 import { useActions } from "./hooks/useActions";
 import { IUser } from "./models/IUser";
 
-function App () {
-    const { setUser, setIsAuth } = useActions()
+function App() {
+    const { setUser, setIsAuth } = useActions();
     useEffect(() => {
         if (localStorage.getItem("auth")) {
-            setIsAuth(true)
-            setUser(({ username: localStorage.getItem("username") } as IUser))
+            setIsAuth(true);
+            setUser({ username: localStorage.getItem("username") } as IUser);
         }
     }, []);
 

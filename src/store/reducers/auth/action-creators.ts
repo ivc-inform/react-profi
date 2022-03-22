@@ -1,4 +1,6 @@
-import { AuthActionsEnum, SetAuthAction, SetErrorAction, SetIsLoadingAction, SetUserAction, } from "./types";
+/** @format */
+
+import { AuthActionsEnum, SetAuthAction, SetErrorAction, SetIsLoadingAction, SetUserAction } from "./types";
 import { IUser } from "../../../models/IUser";
 import { AppDispatch } from "../../index";
 import axios from "axios";
@@ -11,28 +13,28 @@ export const AuthActionCreators = {
     login: (username: string, password: string) => async (dispatch: AppDispatch) => {
         try {
             setTimeout(async () => {
-                dispatch(AuthActionCreators.setIsLoading(true))
-                const response = await axios.get<IUser[]>("./users.json")
-                const user = response.data.find(user => user.username === username && user.password === password)
+                dispatch(AuthActionCreators.setIsLoading(true));
+                const response = await axios.get<IUser[]>("./users.json");
+                const user = response.data.find(user => user.username === username && user.password === password);
                 if (user) {
-                    localStorage.setItem("auth", "true")
-                    localStorage.setItem("username", user.username)
-                    dispatch(AuthActionCreators.setIsAuth(true))
-                    dispatch(AuthActionCreators.setUser(user))
+                    localStorage.setItem("auth", "true");
+                    localStorage.setItem("username", user.username);
+                    dispatch(AuthActionCreators.setIsAuth(true));
+                    dispatch(AuthActionCreators.setUser(user));
                 } else {
-                    dispatch(AuthActionCreators.setError("Некорректный логин или пароль"))
+                    dispatch(AuthActionCreators.setError("Некорректный логин или пароль"));
                 }
-                dispatch(AuthActionCreators.setIsLoading(false))
-            }, 1000)
-        } catch ( e ) {
-            const _e = e as Error
-            dispatch(AuthActionCreators.setError(_e.message))
+                dispatch(AuthActionCreators.setIsLoading(false));
+            }, 1000);
+        } catch (e) {
+            const _e = e as Error;
+            dispatch(AuthActionCreators.setError(_e.message));
         }
     },
     logout: () => async (dispatch: AppDispatch) => {
-        localStorage.removeItem("auth")
-        localStorage.removeItem("username")
-        dispatch(AuthActionCreators.setIsAuth(false))
-        dispatch(AuthActionCreators.setUser({} as IUser))
-    },
-}
+        localStorage.removeItem("auth");
+        localStorage.removeItem("username");
+        dispatch(AuthActionCreators.setIsAuth(false));
+        dispatch(AuthActionCreators.setUser({} as IUser));
+    }
+};
