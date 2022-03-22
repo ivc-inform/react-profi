@@ -12,11 +12,13 @@ export interface EventsProps {}
 
 export const Events: FC<EventsProps> = props => {
     const [modalVisible, setModalVisible] = useState(false);
-    const { fetchGuests, createEvent } = useActions()
+    const { fetchGuests, createEvent, fetchEvents } = useActions()
     const { guests, events } = useTypedSelector(state => state.event)
+    const { username } = useTypedSelector(state => state.auth.user)
 
     useEffect(() => {
         fetchGuests()
+        fetchEvents(username)
     }, []);
 
     const addNewEvent = (event: IEvent) => {
@@ -26,8 +28,7 @@ export const Events: FC<EventsProps> = props => {
 
     return (
         <Layout>
-            { JSON.stringify(events) }
-            <EventCalendar events={ [] } />
+            <EventCalendar events={ events } />
             <Row justify={ "center" }>
                 <Button onClick={ () => setModalVisible(true) }>Добавить событие</Button>
             </Row>
