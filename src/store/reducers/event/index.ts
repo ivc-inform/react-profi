@@ -1,9 +1,14 @@
+import { EventAction, EventState } from "./types";
+
 /** @format */
 
-const initialState = {};
+const initialState: EventState = {
+    events: [],
+    guests: []
+};
 
-export default function EventReducer(state = initialState, action) {
-    switch (action.type) {
+export default function EventReducer (state = initialState, action: EventAction): EventState {
+    switch ( action.type ) {
         default:
             return state;
     }
