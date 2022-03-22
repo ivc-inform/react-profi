@@ -21,8 +21,8 @@ export const AuthActionCreators = {
                     dispatch(AuthActionCreators.setUser(user))
                 } else {
                     dispatch(AuthActionCreators.setError("Некорректный логин или пароль"))
-                    dispatch(AuthActionCreators.setIsLoading(false))
                 }
+                dispatch(AuthActionCreators.setIsLoading(false))
             }, 1000)
         } catch ( e ) {
             const _e = e as Error
