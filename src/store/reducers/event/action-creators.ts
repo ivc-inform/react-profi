@@ -2,7 +2,6 @@ import { IUser } from "../../../models/IUser";
 import { EventActionEnum, SetEventAction, SetGuestAction } from "./types";
 import { IEvent } from "../../../models/IEvent";
 import { AppDispatch } from "../../index";
-import axios from "axios";
 import UserService from "../../../api/UserService";
 
 export const EventActionCreators = {

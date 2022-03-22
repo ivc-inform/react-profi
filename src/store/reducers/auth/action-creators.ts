@@ -3,7 +3,6 @@
 import { AuthActionsEnum, SetAuthAction, SetErrorAction, SetIsLoadingAction, SetUserAction } from "./types";
 import { IUser } from "../../../models/IUser";
 import { AppDispatch } from "../../index";
-import axios from "axios";
 import UserService from "../../../api/UserService";
 
 export const AuthActionCreators = {
@@ -27,7 +26,7 @@ export const AuthActionCreators = {
                 }
                 dispatch(AuthActionCreators.setIsLoading(false));
             }, 1000);
-        } catch (e) {
+        } catch ( e ) {
             const _e = e as Error;
             dispatch(AuthActionCreators.setError(_e.message));
         }
