@@ -6,5 +6,5 @@ export const AuthActionCreators = {
     setIsAuth: (payload: boolean): SetAuthAction => ({ type: AuthActionsEnum.SET_AUTH, payload: payload }),
     setIsLoading: (payload: boolean): SetIsLoadingAction => ({ type: AuthActionsEnum.SET_IS_LOADING, payload: payload }),
     setError: (payload:string): SetErrorAction => ({ type: AuthActionsEnum.SET_ERROR, payload: payload }),
-    login: (username, password)
+    // login: (username, password)
 }
