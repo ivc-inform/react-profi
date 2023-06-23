@@ -1,10 +1,12 @@
 import React from 'react';
-function App() {
-  return (
-    <div>
-      Работает !
-    </div>
-  );
+import { UserList } from "./components/UserList";
+
+function App () {
+    return (
+        <>
+            <UserList />
+        </>
+    );
 }
 
 export default App;
