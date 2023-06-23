@@ -13,7 +13,7 @@ export const fetchTodos = (page: number = 1, limit: number = 10) => {
                 }
             })
             dispatch({
-                type: TodoActionTypes.FETCH_TODO_ERROR,
+                type: TodoActionTypes.FETCH_TODO_SUCCESS,
                 payload: response.data
             })
         } catch ( e ) {
