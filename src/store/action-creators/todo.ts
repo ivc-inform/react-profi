@@ -2,7 +2,7 @@ import { Dispatch } from "react";
 import axios from "axios";
 import { TodoAction, TodoActionTypes } from "../../types/todo";
 
-export const fetchTodos = (page: number, limit: number) => {
+export const fetchTodos = (page: number = 1, limit: number = 10) => {
     return async (dispatch: Dispatch<TodoAction>) => {
         try {
             dispatch({ type: TodoActionTypes.FETCH_TODO })
@@ -23,4 +23,8 @@ export const fetchTodos = (page: number, limit: number) => {
             })
         }
     }
+}
+
+export function setTodoPage (page: number): TodoAction {
+    return { type: TodoActionTypes.SET_TODO_PAGE, payload: page }
 }
