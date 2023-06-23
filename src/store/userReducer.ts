@@ -1,3 +1,10 @@
+import {UserAction, UserActionType, UserState} from "../types/user";
+
+const initialState: UserState = {
+    users: [],
+    loading: false,
+    error: null
+};
 
 export const userReducer = (state = initialState, action: UserAction): UserState => {
     switch (action.type) {

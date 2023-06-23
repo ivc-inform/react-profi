@@ -1,10 +1,10 @@
-interface UserState {
+export interface UserState {
     users: any[];
     loading: boolean;
     error: string | null;
 }
 
-enum UserActionType {
+export enum UserActionType {
     FETCH_USERS = "FETCH_USERS",
     FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS",
     FETCH_USERS_ERROR = "FETCH_USERS_ERROR",
@@ -24,11 +24,5 @@ interface FetchUserErrorAction {
     payload: string
 }
 
-type UserAction = FetchUserAction | FetchUserSuccessAction | FetchUserErrorAction
+export type UserAction = FetchUserAction | FetchUserSuccessAction | FetchUserErrorAction
 
-
-const initialState: UserState = {
-    users: [],
-    loading: false,
-    error: null
-};
