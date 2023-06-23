@@ -24,7 +24,7 @@ export const TodoList: FC<TodoListProps> = props => {
 
     return (
         <>
-            { todos.map(todo => <div key={ todo.id }>{ todo.id }. { todo.name }</div>) }
+            { todos.map(todo => <div key={ todo.id }>{ todo.id }. { todo.title }</div>) }
         </>
     )
 };
