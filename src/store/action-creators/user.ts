@@ -2,7 +2,7 @@ import { UserAction, UserActionType } from "../../types/user";
 import { Dispatch } from "react";
 import axios from "axios";
 
-export const fetchUsers: () => (dispatch: Dispatch<UserAction>) => Promise<void> = () => {
+export const fetchUsers = () => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
             dispatch({ type: UserActionType.FETCH_USERS })
