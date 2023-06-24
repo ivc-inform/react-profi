@@ -1,19 +1,18 @@
 import React, { FC, useEffect } from "react";
 import { useTypedSelector } from "../hooks/useTypedSelector";
-import { fetchTodos } from "../store/action-creators/todo";
 import { useAction } from "../hooks/useAction";
 
 export interface TodoListProps {
 }
 
-export const TodoList: FC<TodoListProps> = props => {
+export const TodoList: FC<TodoListProps> = () => {
     const { page, error, limit, loading, todos } = useTypedSelector(state => state.todo);
-    const { fetchTodos } = useAction();
+    const { fetchTodos ,setTodoPage} = useAction();
     const pages = [1, 2, 3, 4, 5];
 
     useEffect(() => {
         fetchTodos(page, limit);
-    }, []);
+    }, [page]);
 
     if (loading) {
         return <h1>Идет загрузка...</h1>;
@@ -29,6 +28,7 @@ export const TodoList: FC<TodoListProps> = props => {
             <div style={{display:'flex'}}>
                 {pages.map(p=>
                     <div
+                        onClick={()=> setTodoPage(p)}
                         style={{border: p === page? '2px solid red': '1px solid teal', padding : 10, cursor:'pointer'}}
                         key={p}>
                         {p}
