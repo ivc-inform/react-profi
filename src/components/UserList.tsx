@@ -24,7 +24,7 @@ export const UserList: FC<UserListProps> = props => {
 
     return (
         <>
-            { users.map(user => <div key={ user.id }>{ user.name }</div>) }
+            { users.map(user => <div key={ user.id }>{ user.id }. { user.name }</div>) }
         </>
     )
 };
